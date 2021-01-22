@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sv-hover-intent demo</title>
+	<style>
+	* {
+		box-sizing: border-box;
+	}
+	body {
+		max-width: 800px;
+		margin: 50px auto;
+		background: #bba;
+	}
+
+	.menu {
+		display: flex;
+		width: 100%;
+		list-style: none;
+		margin: 1rem auto 15rem;
+		padding: 0;
+		height: 36px;
+		background: #554;
+		color: #ddc;
+	}
+	.menu-item {
+		flex-grow: 1;
+    	position: relative;
+		padding: 10px;
+		text-align: center;
+	}
+	.submenu {
+		display: none;
+		list-style: none;
+		position: absolute;
+		top: 36px;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		font-size: 0.8rem;
+		background: #665;
+	}
+	.submenu > li > a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		color: #ddc;
+		text-decoration: none;
+	}
+	.submenu > li:hover > a {
+		background: #776;
+	}
+
+	#standard .menu-item:hover > .submenu {
+		display: block;
+	}
+
+	#hover-intent .menu-item.visible > .submenu {
+		display: block;
+	}
+	</style>
+</head>
+
+<body>
+
+	<h1>sv-hover-intent demo</h1>
+
+	<h2>Standard CSS hover menu</h2>
+
+	<ul class="menu" id="standard">
+		<li class="menu-item">Articles
+			<ul class="submenu">
+				<li><a href="#">Design</a></li>
+				<li><a href="#">Front-end coding</a></li>
+				<li><a href="#">Back-end coding</a></li>
+			</ul>
+		</li>
+		<li class="menu-item">Tutorials
+			<ul class="submenu">
+				<li><a href="#">HTML</a></li>
+				<li><a href="#">CSS</a></li>
+				<li><a href="#">Javascript</a></li>
+			</ul>
+		</li>
+		<li class="menu-item">Products
+			<ul class="submenu">
+				<li><a href="#">Alpha</a></li>
+				<li><a href="#">Beta</a></li>
+				<li><a href="#">Gamma</a></li>
+				<li><a href="#">Delta</a></li>
+			</ul>
+		</li>
+		<li class="menu-item">Never gonna
+			<ul class="submenu">
+				<li><a href="#">Give you up</a></li>
+				<li><a href="#">Let you down</a></li>
+				<li><a href="#">Run around and desert you</a></li>
+				<li><a href="#">Make you cry</a></li>
+				<li><a href="#">Say goodbye</a></li>
+				<li><a href="#">Tell a lie and hurt you</a></li>
+			</ul>
+		</li>
+	</ul>
+
+
+	<h2>Enhanced hover-intent menu</h2>
+
+	<ul class="menu" id="hover-intent">
+		<li class="menu-item">Articles
+			<ul class="submenu">
+				<li><a href="#">Design</a></li>
+				<li><a href="#">Front-end coding</a></li>
+				<li><a href="#">Back-end coding</a></li>
+			</ul>
+		</li>
+		<li class="menu-item">Tutorials
+			<ul class="submenu">
+				<li><a href="#">HTML</a></li>
+				<li><a href="#">CSS</a></li>
+				<li><a href="#">Javascript</a></li>
+			</ul>
+		</li>
+		<li class="menu-item">Products
+			<ul class="submenu">
+				<li><a href="#">Alpha</a></li>
+				<li><a href="#">Beta</a></li>
+				<li><a href="#">Gamma</a></li>
+				<li><a href="#">Delta</a></li>
+			</ul>
+		</li>
+		<li class="menu-item">Never gonna
+			<ul class="submenu">
+				<li><a href="#">Give you up</a></li>
+				<li><a href="#">Let you down</a></li>
+				<li><a href="#">Run around and desert you</a></li>
+				<li><a href="#">Make you cry</a></li>
+				<li><a href="#">Say goodbye</a></li>
+				<li><a href="#">Tell a lie and hurt you</a></li>
+			</ul>
+		</li>
+	</ul>
+
+
+	<script src="sv-hover-intent.js?dev"></script>
+	<script>
+		var menuItems = document.querySelectorAll('.menu-item');
+		var hi = new SV.HoverIntent(menuItems, {
+			// required parameters
+			onEnter: function(targetItem) {
+				targetItem.classList.add('visible');
+			},
+			onExit: function(targetItem) {
+				targetItem.classList.remove('visible');
+			},
+		});
+	</script>
+
+</body>
+</html>
