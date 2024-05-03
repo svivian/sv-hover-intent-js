@@ -1,72 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>sv-hover-intent demo</title>
-	<style>
-	* {
-		box-sizing: border-box;
-	}
-	body {
-		max-width: 800px;
-		margin: 50px auto;
-		background: #bba;
-	}
+	<title>JavaScript sv-hover-intent demo</title>
+	<link rel="stylesheet" href="styles.css?dev">
 
-	.menu {
-		display: flex;
-		width: 100%;
-		list-style: none;
-		margin: 1rem auto 15rem;
-		padding: 0;
-		height: 36px;
-		background: #554;
-		color: #ddc;
-	}
-	.menu-item {
-		flex-grow: 1;
-    	position: relative;
-		padding: 10px;
-		text-align: center;
-	}
-	.submenu {
-		display: none;
-		list-style: none;
-		position: absolute;
-		top: 36px;
-		left: 0;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		font-size: 0.8rem;
-		background: #665;
-	}
-	.submenu > li > a {
-		display: block;
-		width: 100%;
-		height: 100%;
-		padding: 10px;
-		color: #ddc;
-		text-decoration: none;
-	}
-	.submenu > li:hover > a {
-		background: #776;
-	}
-
-	#standard .menu-item:hover > .submenu {
-		display: block;
-	}
-
-	#hover-intent .menu-item.visible > .submenu {
-		display: block;
-	}
-	</style>
+	<script defer src="../src/sv-hover-intent.js?dev"></script>
+	<script>
+	// defer script above and run this on DOM ready
+	document.addEventListener('DOMContentLoaded', function() {
+		const menuItems = document.querySelectorAll('#hover-intent .menu-item');
+		const hi = new SV.HoverIntent(menuItems, {
+			// required parameters
+			onEnter: function(targetItem) {
+				targetItem.classList.add('visible');
+			},
+			onExit: function(targetItem) {
+				targetItem.classList.remove('visible');
+			},
+		});
+	});
+	</script>
 </head>
 
 <body>
 
-	<h1>sv-hover-intent demo</h1>
+	<h1>JavaScript sv-hover-intent demo</h1>
 
 	<h2>Standard CSS hover menu</h2>
+
+	<p>Appears instantly but disappears too quickly.</p>
 
 	<ul class="menu" id="standard">
 		<li class="menu-item">Articles
@@ -106,6 +68,8 @@
 
 	<h2>Enhanced hover-intent menu</h2>
 
+	<p>Menu appears as mouse movement slows. Much more usable!</p>
+
 	<ul class="menu" id="hover-intent">
 		<li class="menu-item">Articles
 			<ul class="submenu">
@@ -140,21 +104,6 @@
 			</ul>
 		</li>
 	</ul>
-
-
-	<script src="sv-hover-intent.js?dev"></script>
-	<script>
-		var menuItems = document.querySelectorAll('.menu-item');
-		var hi = new SV.HoverIntent(menuItems, {
-			// required parameters
-			onEnter: function(targetItem) {
-				targetItem.classList.add('visible');
-			},
-			onExit: function(targetItem) {
-				targetItem.classList.remove('visible');
-			},
-		});
-	</script>
 
 </body>
 </html>
