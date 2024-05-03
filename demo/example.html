@@ -9,7 +9,7 @@
 	// defer script above and run this on DOM ready
 	document.addEventListener('DOMContentLoaded', function() {
 		const menuItems = document.querySelectorAll('#hover-intent .menu-item');
-		const hi = new SV.HoverIntent(menuItems, {
+		new SV.HoverIntent(menuItems, {
 			// required parameters
 			onEnter: function(targetItem) {
 				targetItem.classList.add('visible');
