@@ -1,0 +1,23 @@
+{
+  "name": "sv-hover-intent",
+  "version": "1.0.0",
+  "description": "A JavaScript library for handling mouse hovers on a delay, when the user intends to hover the element.",
+  "main": "src/sv-hover-intent.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svivian/sv-hover-intent-js.git"
+  },
+  "keywords": [
+    "javascript",
+    "hover",
+	"hoverintent",
+    "usability"
+  ],
+  "author": "Scott Vivian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svivian/sv-hover-intent-js/issues"
+  },
+  "homepage": "https://github.com/svivian/sv-hover-intent-js#readme"
+}
