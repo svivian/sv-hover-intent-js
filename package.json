@@ -1,6 +1,6 @@
 {
   "name": "sv-hover-intent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript library for handling mouse hovers on a delay, when the user intends to hover the element.",
   "main": "src/sv-hover-intent.js",
   "scripts": {},
