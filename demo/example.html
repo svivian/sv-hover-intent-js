@@ -18,6 +18,17 @@
 				targetItem.classList.remove('visible');
 			},
 		});
+
+		const submenuItems = document.querySelectorAll('#hover-intent .submenu > li');
+		new SV.HoverIntent(submenuItems, {
+			// required parameters
+			onEnter: function(targetItem) {
+				targetItem.classList.add('visible');
+			},
+			onExit: function(targetItem) {
+				targetItem.classList.remove('visible');
+			},
+		});
 	});
 	</script>
 </head>
@@ -35,14 +46,21 @@
 			<ul class="submenu">
 				<li><a href="#">Design</a></li>
 				<li><a href="#">Front-end coding</a></li>
-				<li><a href="#">Back-end coding</a></li>
+				<li><a href="#">Back-end coding &gt;</a>
+					<ul class="subsubmenu">
+						<li><a href="#">C#</a></li>
+						<li><a href="#">Node</a></li>
+						<li><a href="#">PHP</a></li>
+						<li><a href="#">Python</a></li>
+					</ul>
+				</li>
 			</ul>
 		</li>
 		<li class="menu-item">Tutorials
 			<ul class="submenu">
 				<li><a href="#">HTML</a></li>
 				<li><a href="#">CSS</a></li>
-				<li><a href="#">Javascript</a></li>
+				<li><a href="#">JavaScript</a></li>
 			</ul>
 		</li>
 		<li class="menu-item">Products
@@ -75,7 +93,14 @@
 			<ul class="submenu">
 				<li><a href="#">Design</a></li>
 				<li><a href="#">Front-end coding</a></li>
-				<li><a href="#">Back-end coding</a></li>
+				<li><a href="#">Back-end coding &gt;</a>
+					<ul class="subsubmenu">
+						<li><a href="#">C#</a></li>
+						<li><a href="#">Node</a></li>
+						<li><a href="#">PHP</a></li>
+						<li><a href="#">Python</a></li>
+					</ul>
+				</li>
 			</ul>
 		</li>
 		<li class="menu-item">Tutorials
